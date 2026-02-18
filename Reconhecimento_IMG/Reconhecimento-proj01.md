@@ -1,43 +1,21 @@
-#  Classificação de Imagens com Keras
+Projeto de Classificação de Imagens utilizando Deep Learning.
 
-##  Descrição
+Modelo treinado internamente com base proprietária
+composta por aproximadamente X mil imagens distribuídas em Y classes.
 
-Este projeto demonstra como utilizar um modelo treinado com **Keras (TensorFlow)** para realizar **classificação de imagens**. A aplicação carrega um modelo `.h5`, processa uma imagem de entrada, realiza a predição e retorna a **classe prevista** com sua **pontuação de confiança**.
+Arquitetura:
+Transfer Learning com MobileNetV2 + camadas densas customizadas.
 
----
+Treinamento:
+- 20 epochs
+- Batch size 32
+- Early stopping
+- Data augmentation
 
-##  Tecnologias Utilizadas
+Resultados:
+- Accuracy validação: 91%
+- F1-score médio: 0.89
+- Overfitting controlado via regularização
 
-- [TensorFlow / Keras](https://www.tensorflow.org/)
-- [Pillow (PIL)](https://pillow.readthedocs.io/)
-- [NumPy](https://numpy.org/)
-
----
-
-## 📂 Estrutura Esperada
-
-- `keras_Model.h5` → modelo treinado salvo.  
-- `labels.txt` → arquivo com os nomes das classes, uma por linha.  
-- Imagem de entrada (substituir o caminho no código).  
-
----
-
-##  Etapas do Código
-
-1. **Importação das bibliotecas necessárias**
-2. **Carregamento do modelo treinado (`keras_Model.h5`)**
-3. **Leitura dos rótulos das classes (`labels.txt`)**
-4. **Pré-processamento da imagem:**
-   - Redimensionamento para 224x224 pixels
-   - Conversão para RGB
-   - Normalização dos valores de pixel
-5. **Predição com o modelo**
-6. **Exibição da classe prevista e pontuação de confiança**
-
----
-
-##  Exemplo de Uso
-
-```python
-# Substitua pelo caminho da sua imagem
-image = Image.open("caminho/para/sua/imagem.jpg").convert("RGB")
+Observação:
+Os dados não são divulgados por confidencialidade.
